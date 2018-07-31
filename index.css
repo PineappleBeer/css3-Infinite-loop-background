@@ -1,0 +1,25 @@
+html,body {
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    overflow: hidden;
+}
+#bg{
+    width:4500px; /* 背景长度一定要是动画长度的一倍以上，必须整数倍，否则会衔接不顺畅 */
+    height:100%;
+    background: #348cb2 url("./bg.jpg") bottom left;
+    background-size: 2250px auto;/* 定义X方向的长度，这个也很重要,必须和动画长度一样，不然会衔接不顺畅*/
+    background-repeat:repeat-x;/* 仅X方向重复 */
+    animation: bg 10s linear infinite;/* 动画无限循环 */
+}
+
+@keyframes bg {
+    0%{
+        transform:translate3d(0,0,0); 
+    }
+
+    100%{
+        transform: translate3d(-2250px,0,0);/* X方向移动背景 */
+    }
+}
